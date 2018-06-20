@@ -116,10 +116,10 @@ public class TaskService {
 
 		if (task.getNodeId() == -1) {// 说明在挂起队列
 			hangupTaskList.remove(task);
-			allTask.remove(task);
+			allTask.remove(task.getTaskId());
 		} else {// 有服务节点
 			runTaskList.remove(task);
-			allTask.remove(task);
+			allTask.remove(task.getTaskId());
 		}
 		return ReturnCodeKeys.E011;
 	}
